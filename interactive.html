@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <p>*Game of <i>Life</i></p>
+    <title>Game of Life [*subject to change due to probable copyright issuues]</title>
+        <p>Welcome to the *Game of Life</p>
     </head>
+    <!---feel free to play around with the borders and add items to represent 'moves'.--->
     <body>
-        <canvas id="canvas"></canvas>
-            <script>
-            canvas=document.getElementById("canvas");
-            context=canvas.getContext("2d")
-            function  render(){
-                canvas.width=500;
-      	        canvas.height=500;
+    <canvas id="canvas"></canvas>
+    <script>
+    canvas=document.getElementById("canvas");
+    context=canvas.getContext("2d")
+    function  render(){
+        canvas.width=500;
+      	canvas.height=500;
       	    
-      	        context.fillStyle="yellow"
-      	        context.fillRect(0,0,500,500)
+      	context.fillStyle="yellow"
+      	context.fillRect(0,0,500,500)
       	    
-      	        context.beginPath();
-      	        context.moveTo(10,490);
-      	        context.lineTo(490,490);
-      	        context.lineTo(490,10);
-      	        context.lineTo(10,10)
-      	        context.closePath();
+      	context.beginPath();
+      	context.moveTo(10,490);
+      	context.lineTo(490,490);
+      	context.lineTo(490,10);
+      	context.lineTo(10,10)
+      	context.closePath();
       	    
-      	        context.fillStyle="green";
-      	        context.fill();
+      	context.fillStyle="green";
+      	context.fill();
       	    
-      	        context.strokeStyle();
-      	        context.stroke();}
-                render();
-            </script>
-        <script type="text/javascript">
-            confirm("you are about to play *Game of Life")
-            
-            var player_name=(prompt("what will your name be?"));
-            var player_gender=(prompt("What is your gender?(male/female)"));
-            
-            // the below commented code is supposed to write on the html according to the gender of the player, but doesn't work
-            
-            /*if (player_gender.length()===4)
-            {var player_gender='male';
-            document.write("Welcome Mister "+player_name+", to the game of life.");}
-            else if (player_gender.length()===6)
-            {var player_gender='female';
-            document.write("Welcome Miss "+player_name+", to the game of life.");}
-            else
-            {var player_gender='other';
-            document.write("Welcome "+player_name+", to the game of life.");}
-            */
-            
-            document.write("Welcome "+player_name+", to the game of life.");
-        </script>
-        <!--The below takes information from the file jquery.js-->
-        <script scr="jquery.js"><script>
-        <script>
-            <div id="thisdiv"></div>
-        
-            
-        </script>
+      	context.strokeStyle();
+      	context.stroke();}
+        render();
+    </script>
     </body>
 </html>
