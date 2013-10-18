@@ -1,0 +1,26 @@
+
+<canvas id="canvas"></canvas>
+    <script>
+    canvas=document.getElementById("canvas");
+    context=canvas.getContext("2d")
+    function  render(){
+        canvas.width=500;
+      	canvas.height=500;
+      	    
+      	context.fillStyle="yellow"
+      	context.fillRect(0,0,500,500)
+      	    
+      	context.beginPath();
+      	context.moveTo(10,490);
+      	context.lineTo(490,490);
+      	context.lineTo(490,10);
+      	context.lineTo(10,10)
+      	context.closePath();
+      	    
+      	context.fillStyle="green";
+      	context.fill();
+      	    
+      	context.strokeStyle();
+      	context.stroke();}
+        render();
+    </script>
