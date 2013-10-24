@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--style="font-family: ;backround-color: ;color: "-->
+        <title>Awesome!</title>
+    </head>
+    <body style="background-color:green">
+    <!--The below div is not supposed to be in the head.-->
+        <div id="head_div">This is the head div.</div>
+        <div style="background-color:yellow;font-family:arial;color:blue"><div>
+        <p style="font-family:arial;color:blue">Choose the following options:</p>
+        <input type="button" id="button_1" value="option_1">
+        <input type="button" id="button_2" value="option_2">
+        <input type="button" id="button_3" value="option_3">
+        <input type="button" id="button_4" value="option_4">
+        <div id="div_2" style="background-color:blue;color:red"></div>
+        <script src="j_query.js"></script>
+        <script>
+            $("#button_1").click(function(){
+                $("#div_2").text("You have attribute: [option_1 here]")
+            });
+            $("#button_2").click(function(){
+                $("#div_2").text("You have attribute: [option_2 here]")
+            });
+            $("#button_3").click(function(){
+                $("#div_2").text("You have attribute: [option_3 here]")
+            });
+            $("#button_4").click(function(){
+                $("#div_2").text("You have attribute: [option_4 here]")
+            });
+        </script>
+    </body>
+</html>

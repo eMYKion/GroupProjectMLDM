@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Using jQuery</title>
     </head>
     <body>
-        <div id="thisdiv">This is the head div.</div>
-        <input type="button" value="click or die" id="thisbutton">
-        <script src="jquery.js"></script>
+        <div id="div_1">This is an awesome div.</div>
+        <input type="button" value="Click me" id="button_1">
+        <script src="j_query.js"></script>
         <script>
-        $("#thisbutton").click (function(){ $("#thisdiv").text("clicked")});
-        $("#thisbutton").mouseover (function(){$("#thisdiv").text("mouse is over button")});
-        $("#thisdiv").mouseover (function(){$("#thisdiv").text("mouse is over div")});
+            $("#button_1").mouseover(function(){
+                $("#div_1").text("Mouse is over.")
+            })
         </script>
     </body>
 </html>
