@@ -1,95 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <p>*Game of <i>Life</i></p>
+    <!--style="font-family: ;backround-color: ;color: "-->
+        <title>Awesome!</title>
     </head>
-    
-    
-    
-    <body>
-    
-    
+    <body style="background-color:green">
+    <!--The below div is not supposed to be in the head.-->
+        <div id="head_div" style="font-family:arial"><a href="">welcome to the game of life</a></div>
+        <div style="background-color:yellow;font-family:arial;color:blue"><div>
+        <p style="font-family:arial;color:blue">Choose the following options:</p>
+        <input type="button" id="button_1" value="option_1">
+        <input type="button" id="button_2" value="option_2">
+        <input type="button" id="button_3" value="option_3">
+        <input type="button" id="button_4" value="option_4">
+        <div id="div_2" style="background-color:blue;color:red"><--------------></div>
+        <script src="j_query.js"></script>
+        <script>
+            $("#button_1").click(function(){
+                $("#div_2").text("You have attribute: [option_1 here]")
+            });
+            $("#button_2").click(function(){
+                $("#div_2").text("You have attribute: [option_2 here]")
+            });
+            $("#button_3").click(function(){
+                $("#div_2").text("You have attribute: [option_3 here]")
+            });
+            $("#button_4").click(function(){
+                $("#div_2").text("You have attribute: [option_4 here]")
+            });
+        </script>
         <canvas id="canvas"></canvas>
-        
-        
-        
-        
-            <script>
-            canvas=document.getElementById("canvas");
-            context=canvas.getContext("2d")
-            function  render(){
-                canvas.width=500;
-      	        canvas.height=500;
+    <script>
+    canvas=document.getElementById("canvas");
+    context=canvas.getContext("2d")
+    function  render(){
+        canvas.width=500;
+      	canvas.height=500;
       	    
-      	        context.fillStyle="yellow"
-      	        context.fillRect(0,0,500,500)
+      	context.fillStyle="grey"
+      	context.fillRect(0,0,500,500)
       	    
-      	        context.beginPath();
-      	        context.moveTo(10,490);
-      	        context.lineTo(490,490);
-      	        context.lineTo(490,10);
-      	        context.lineTo(10,10)
-      	        context.closePath();
+      	context.beginPath();
+      	context.moveTo(10,490);
+      	context.lineTo(490,490);
+      	context.lineTo(490,10);
+      	context.lineTo(10,10)
+      	context.closePath();
       	    
-      	        context.fillStyle="green";
-      	        context.fill();
+      	context.fillStyle="orange";
+      	context.fill();
       	    
-      	        context.strokeStyle();
-      	        context.stroke();}
-                render();
-            </script>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        <div id="thisdiv">This is an awesome div.</div>
-        <input type="button" value="This is supposed to show up" id="thisbutton">
-        
-        
-        
-        
-        <script type="text/javascript"></script>
-        <script>
-            confirm("you are about to play *Game of Life")
-            
-            var player_name=(prompt("what will your name be?"));
-            var player_gender=(prompt("What is your gender?(male/female)"));
-            
-            // the below commented code is supposed to write on the html according to the gender of the player, but doesn't work
-            
-            /*if (player_gender.length()===4)
-            {var player_gender='male';
-            document.write("Welcome Mister "+player_name+", to the game of life.");}
-            else if (player_gender.length()===6)
-            {var player_gender='female';
-            document.write("Welcome Miss "+player_name+", to the game of life.");}
-            else
-            {var player_gender='other';
-            document.write("Welcome "+player_name+", to the game of life.");}
-            */
-            
-            document.write("Welcome "+player_name+", to the game of life.");
-        </script>
-        
-        
-        
-        <!--The below takes information from the file jquery.js-->
-        
-        <script scr="jquery.js"></script>
-        <script>
-        $("#thisbutton").click (function(){ ("#thisdiv").text("clicked")})
-        $("#thisbutton").mouseover(function(){("#thisdiv").text("mouse is over button")})
-        $("#thisdiv").mouseover(function(){("#thisdiv").text("mouse is over div")})
-        
-            
-        
-            
-        </script>
+      	context.strokeStyle();
+      	context.stroke();}
+        render();
+    </script>
     </body>
 </html>
