@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<html><head>
     <!--style="font-family: ;backround-color: ;color: "-->
         <title>Game of life.</title>
     </head>
-    <body style="background-color:green">
+    <body style="background-color: green;">
     <!--The below div is not supposed to be in the head.-->
         <div id="head_div" style="width:300px;font-family:arial;background-color:red">This is the head div.</div>
-        <div style="background-color:yellow;font-family:arial;color:blue;width:700px;height:700px"><div>
-        <p style="font-family:arial;color:blue">Choose the following options:</p>
-        <div style="height:700px;width:300px;background-color:brown;float:right">[Current_Player_Status]</div>
-        <input type="button" id="button_1" value="option_1">
-        <input type="button" id="button_2" value="option_2">
-        <input type="button" id="button_3" value="option_3">
-        <input type="button" id="button_4" value="option_4">
-        <div id="div_2" style="background-color:blue;color:red"></div>
+        <div style="background-color:yellow;font-family:arial;color:blue;width:900px;height:700px;position:relative;">
+            <p style="font-family:arial;color:blue">Choose the following options:</p>
+            <div style="height:700px;width:300px;background-color:brown;position:absolute;right:0;top:0;bottom:0;">[Current_Player_Status]</div>
+            <input type="button" id="button_1" value="option_1">
+            <input type="button" id="button_2" value="option_2">
+            <input type="button" id="button_3" value="option_3">
+            <input type="button" id="button_4" value="option_4">
+            <div id="div_2" style="background-color:blue;color:red">You have attribute: [option_4 here]</div>
+            <canvas id="canvas" style="position:absolute;left: 50px;bottom: 50px;top: 80px;" width="500" height="500"></canvas>
+        </div>
         <script src="j_query.js"></script>
         <script>
             $("#button_1").click(function(){
@@ -31,27 +31,7 @@
             });
             
         </script>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <form method="link" action="https://c9.io/emykion/groupprojectmldm/workspace/credits_webpage.html">
-        <input type="submit" value="Credits">
-        </form>
-        
-        
-        </script>
-        <canvas id="canvas"></canvas>
+        <a href="https://c9.io/emykion/groupprojectmldm/workspace/credits_webpage.html"><input type="button" value="Credits"></a>
         <script>
         
         canvas=document.getElementById("canvas");
@@ -78,4 +58,4 @@
         render();
     </script>
 
-</html>
+</body></html>
