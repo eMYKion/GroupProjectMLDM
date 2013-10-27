@@ -7,20 +7,39 @@
         canvas.width=500;
       	canvas.height=500;
       	    
-      	context.fillStyle="yellow"
+      	context.fillStyle="green"
       	context.fillRect(0,0,500,500)
       	    
       	context.beginPath();
-      	context.moveTo(10,490);
+      	context.moveTo(10,10);
+      	
+      	context.lineTo(10,10);
+      	context.lineTo(10,490);
+      	context.lineTo(245,490);
+      	context.lineTo(245,123);
+      	context.lineTo(255,123);
+      	context.lineTo(255,490);
       	context.lineTo(490,490);
       	context.lineTo(490,10);
-      	context.lineTo(10,10)
+      	//moving back now...
+      	context.lineTo(377,10);
+      	context.lineTo(377,377);
+      	context.lineTo(367,377);
+      	context.lineTo(367,10);
+      	context.lineTo(133,10);
+      	context.lineTo(133,377);
+      	context.lineTo(123,377);
+      	context.lineTo(123,10);
+      	
+      	
+      	
+      	
       	context.closePath();
       	    
-      	context.fillStyle="green";
+      	context.fillStyle="grey";
       	context.fill();
       	    
       	context.strokeStyle();
-      	context.stroke();}
+        context.stroke();}
         render();
     </script>

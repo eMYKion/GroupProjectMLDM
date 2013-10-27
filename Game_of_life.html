@@ -4,17 +4,33 @@
     </head>
     <body style="background-color: green;">
     <!--The below div is not supposed to be in the head.-->
-        <div id="head_div" style="width:300px;font-family:arial;background-color:red">This is the head div.</div>
+        <div id="head_div" style="width:300px;font-family:arial;background-color:red"><h1>Game of life</h1></div>
+        
         <div style="background-color:yellow;font-family:arial;color:blue;width:900px;height:700px;position:relative;">
+        
             <p style="font-family:arial;color:blue">Choose the following options:</p>
-            <div style="height:700px;width:300px;background-color:brown;position:absolute;right:0;top:0;bottom:0;">[Current_Player_Status]</div>
+            
+            
+            <div style="height:700px;width:300px;background-color:brown;position:absolute;right:0;top:0;bottom:0;">
+            
+            [Current_Player_Status]
+            <input type="button" id="button_5" value="1">
+            <input type="button" id="button_6" value="2">
+            <input type="button" id="button_7" value="3">
+            <input type="button" id="button_8" value="4">
+                
+            </div>
+            
+            
             <input type="button" id="button_1" value="option_1">
             <input type="button" id="button_2" value="option_2">
             <input type="button" id="button_3" value="option_3">
             <input type="button" id="button_4" value="option_4">
             <div id="div_2" style="background-color:blue;color:red">You have attribute: [option_4 here]</div>
+            
             <canvas id="canvas" style="position:absolute;left: 50px;bottom: 50px;top: 80px;" width="500" height="500"></canvas>
         </div>
+        
         <script src="j_query.js"></script>
         <script>
             $("#button_1").click(function(){
@@ -29,33 +45,67 @@
             $("#button_4").click(function(){
                 $("#div_2").text("You have attribute: [option_4 here]")
             });
-            
         </script>
+        
         <a href="https://c9.io/emykion/groupprojectmldm/workspace/credits_webpage.html"><input type="button" value="Credits"></a>
+        
+        
+        
+        
+        
+        
         <script>
         
         canvas=document.getElementById("canvas");
         context=canvas.getContext("2d")
         function  render(){
-            canvas.width=500;
-      	    canvas.height=500;
+        canvas.width=500;
+      	canvas.height=500;
       	    
-      	    context.fillStyle="grey"
-      	    context.fillRect(0,0,500,500)
+      	context.fillStyle="green"
+      	context.fillRect(0,0,500,500)
       	    
-      	    context.beginPath();
-      	    context.moveTo(10,490);
-      	    context.lineTo(490,490);
-      	    context.lineTo(490,10);
-      	    context.lineTo(10,10)
-      	    context.closePath();
+      	context.beginPath();
+      	context.moveTo(10,10);
+      	
+      	context.lineTo(10,10);
+      	context.lineTo(10,490);
+      	context.lineTo(245,490);
+      	context.lineTo(245,123);
+      	context.lineTo(255,123);
+      	context.lineTo(255,490);
+      	context.lineTo(490,490);
+      	context.lineTo(490,10);
+      	//moving back now...
+      	context.lineTo(377,10);
+      	context.lineTo(377,377);
+      	context.lineTo(367,377);
+      	context.lineTo(367,10);
+      	context.lineTo(133,10);
+      	context.lineTo(133,377);
+      	context.lineTo(123,377);
+      	context.lineTo(123,10);
+      	
+      	
+      	
+      	
+      	context.closePath();
       	    
-      	    context.fillStyle="orange";
-      	    context.fill();
+      	context.fillStyle="grey";
+      	context.fill();
       	    
-      	    context.strokeStyle();
-      	    context.stroke();}
+      	context.strokeStyle();
+        context.stroke();}
         render();
-    </script>
+        </script>
+    
+    
+    
+    
+    
+    
+    
 
-</body></html>
+    </body>
+    
+</html>
