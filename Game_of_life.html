@@ -1,13 +1,15 @@
-<html><head>
+<html>
+    <head>
     <!--style="font-family: ;backround-color: ;color: "-->
-        <title>Game of life.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Game of life!</title>
     </head>
-    <body style="background-color: green;">
-    <!--The below div is not supposed to be in the head.-->
+    <body style="background-color:orange">
+    <div class="jumbocontainer">
+    <!--The below div is not supposed to be in the head.--> 
         <div id="head_div" style="width:300px;font-family:arial;background-color:red"><h1>Game of life</h1></div>
         
         <div style="background-color:yellow;font-family:arial;color:blue;width:900px;height:700px;position:relative;">
-        
             <p style="font-family:arial;color:blue">Choose the following options:</p>
             
             
@@ -18,6 +20,53 @@
             <input type="button" id="button_6" value="2">
             <input type="button" id="button_7" value="3">
             <input type="button" id="button_8" value="4">
+            <canvas id="scanvas" style="padding-top: 0px;padding-left: 0px;border:2px solid black" ></canvas>
+                <script>
+                    canvas=document.getElementById("scanvas");
+                    context=scanvas.getContext("2d")
+                    
+                    var time=0;
+                    
+                    var dg=Math.PI/180;
+                    
+                    scanvas.width=260
+                    scanvas.height=260
+                    
+                    function render(){
+                       
+                        context.fillStyle="white";
+                        context.fillRect(0,0,scanvas.width,scanvas.height);
+                        
+                        context.fillStyle="blue"
+                        context.beginPath();
+                        context.moveTo(130,130);
+                        context.arc(130, 130, 50, 360, 45, true);
+                        context.closePath();
+                        context.fill();
+                    
+                        
+                    
+                        time++;
+                        
+                        setTimeout(render,1000/60);
+                    }
+                    render();
+                    
+                    
+                    
+                    
+                    
+                </script>
+                
+                
+                <input type="button" value="roll" id="roll_b">
+                
+                
+                
+                
+            
+    
+            
                 
             </div>
             
@@ -45,6 +94,7 @@
             $("#button_4").click(function(){
                 $("#div_2").text("You have attribute: [option_4 here]")
             });
+            
         </script>
         
         <a href="https://c9.io/emykion/groupprojectmldm/workspace/credits_webpage.html"><input type="button" value="Credits"></a>
@@ -56,14 +106,24 @@
         
         <script>
         
+        var posX=56.5;
+        var posY=50;
+        
         canvas=document.getElementById("canvas");
         context=canvas.getContext("2d")
+        function Player_Turn(){
+            if(posY<500)
+                {posY+=50}
+        }
+        
+        
         function  render(){
+        context.save();
         canvas.width=500;
       	canvas.height=500;
       	    
-      	context.fillStyle="green"
-      	context.fillRect(0,0,500,500)
+      	context.fillStyle="green";
+      	context.fillRect(0,0,500,500);
       	    
       	context.beginPath();
       	context.moveTo(10,10);
@@ -76,7 +136,7 @@
       	context.lineTo(255,490);
       	context.lineTo(490,490);
       	context.lineTo(490,10);
-      	//moving back now...
+      	//moving path back now...
       	context.lineTo(377,10);
       	context.lineTo(377,377);
       	context.lineTo(367,377);
@@ -94,11 +154,31 @@
       	context.fillStyle="grey";
       	context.fill();
       	    
-      	context.strokeStyle();
-        context.stroke();}
+      	context.strokeStyle="black";
+        context.stroke();
+        
+        
+        
+        ///PLAYER----------------------------------------------------------------------------------
+        
+        context.fillStyle="pink";
+        context.beginPath();
+        context.arc(posX, posY, 25, 0, Math.PI*2, false);
+        context.closePath();
+        context.fill();
+        context.restore();
+        setTimeout(render,1000/60);///This is important: dedefines canvas stuff multiple times
+        }
         render();
+        $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
         </script>
-    
+        
+        
+        
+        
+        
+        <!---ajsfhsduighsuigh--->
+        
     
     
     

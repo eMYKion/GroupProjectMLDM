@@ -2,7 +2,7 @@
 <canvas id="canvas"></canvas>
     <script>
     canvas=document.getElementById("canvas");
-    context=canvas.getContext("2d")
+    context=canvas.getContext("2d");
     function  render(){
         canvas.width=500;
       	canvas.height=500;
@@ -43,3 +43,21 @@
         context.stroke();}
         render();
     </script>
+    <!--
+    var c=document.getElementById("myCanvas");
+                    var ctx=c.getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(95,50,40,0,2*Math.PI);
+                    ctx.stroke();
+                    
+                    var c=document.getElementById("myCanvas");
+                    var ctx=c.getContext("2d");
+                    ctx.font="30px Arial";
+                    ctx.fillText("Hello World",10,50);
+                    
+                    var c=document.getElementById("myCanvas");
+                    var ctx=c.getContext("2d");
+                    ctx.font="30px Arial";
+                    ctx.strokeText("Hello World",10,50);
+                    
+    -->

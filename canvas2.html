@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is canvas 2</title>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            canvas=document.getElementById("canvas");
+            context=canvas.getContext("2d");
+            
+            
+            canvas.width=500
+            canvas.height=500
+            
+            function render(){
+                context.fillStyle="gray";
+                context.fillRect(0,0,canvas.width,canvas.height);
+                
+                context.fillStyle="yellow";
+                context.arc(canvas.width/2,canvas.height/2,40,0,Math.PI*2,true);
+                context.fill();
+                
+                
+                
+                    
+                
+                
+                
+                
+            }
+            render();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </script>
+        
+        
+        
+    </body>
+    
+    
+    
+</html>
