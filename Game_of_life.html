@@ -59,8 +59,10 @@
                 </script>
                 
                 
-                <input type="button" value="roll" id="roll_b">
-                
+                <input type="button" value="move down" id="roll_b">
+                <input type="button" value="move right" id="roll_c">
+                <input type="button" value="move up" id="roll_d">
+
                 
                 
                 
@@ -106,14 +108,22 @@
         
         <script>
         
-        var posX=56.5;
-        var posY=50;
+        var posX=67;
+        var posY=155/3;
         
         canvas=document.getElementById("canvas");
         context=canvas.getContext("2d")
         function Player_Turn(){
-            if(posY<500)
-                {posY+=50}
+            if(posY<400)
+                {posY+=238/3}
+        }
+        function Player_Turn_Left(){
+            if(posX<400)
+                {posX+=122}
+        }
+        function Player_Turn_Up(){
+            if(posY>66)
+                {posY-=238/3}
         }
         
         
@@ -128,27 +138,24 @@
       	context.beginPath();
       	context.moveTo(10,10);
       	
-      	context.lineTo(10,10);
-      	context.lineTo(10,490);
-      	context.lineTo(245,490);
-      	context.lineTo(245,123);
-      	context.lineTo(255,123);
-      	context.lineTo(255,490);
-      	context.lineTo(490,490);
-      	context.lineTo(490,10);
+      	context.lineTo(12,12);
+      	context.lineTo(12,488);
+      	context.lineTo(244,488);
+      	context.lineTo(244,91.333333333333333333333333333333333333333333333333);
+      	context.lineTo(256,91.333333333333333333333333333333333333333333333333);
+      	context.lineTo(256,488);
+      	context.lineTo(488,488);
+      	context.lineTo(488,12);
       	//moving path back now...
-      	context.lineTo(377,10);
-      	context.lineTo(377,377);
-      	context.lineTo(367,377);
-      	context.lineTo(367,10);
-      	context.lineTo(133,10);
-      	context.lineTo(133,377);
-      	context.lineTo(123,377);
-      	context.lineTo(123,10);
-      	
-      	
-      	
-      	
+      	context.lineTo(378,12);
+      	context.lineTo(378,396.66666666666666666666666666666666666666666666666);
+      	context.lineTo(366,396.66666666666666666666666666666666666666666666666);
+      	context.lineTo(366,12);
+      	context.lineTo(134,12);
+      	context.lineTo(134,396.66666666666666666666666666666666666666666666666);
+      	context.lineTo(122,396.66666666666666666666666666666666666666666666666);
+      	context.lineTo(122,12);
+
       	context.closePath();
       	    
       	context.fillStyle="grey";
@@ -161,16 +168,19 @@
         
         ///PLAYER----------------------------------------------------------------------------------
         
-        context.fillStyle="pink";
+        context.fillStyle="black";
         context.beginPath();
         context.arc(posX, posY, 25, 0, Math.PI*2, false);
         context.closePath();
         context.fill();
         context.restore();
-        setTimeout(render,1000/60);///This is important: dedefines canvas stuff multiple times
+        setTimeout(render,1000/60);///This is important: redefines canvas stuff multiple times
         }
         render();
         $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
+        $("#roll_c").click(Player_Turn_Left);
+        $("#roll_d").click(Player_Turn_Up);
+
         </script>
         
         
