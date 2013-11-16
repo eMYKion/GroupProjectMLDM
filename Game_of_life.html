@@ -117,7 +117,7 @@
             if(posY<400)
                 {posY+=238/3}
         }
-        function Player_Turn_Left(){
+        function Player_Turn_Right(){
             if(posX<400)
                 {posX+=122}
         }
@@ -141,8 +141,8 @@
       	context.lineTo(12,12);
       	context.lineTo(12,488);
       	context.lineTo(244,488);
-      	context.lineTo(244,91.333333333333333333333333333333333333333333333333);
-      	context.lineTo(256,91.333333333333333333333333333333333333333333333333);
+      	context.lineTo(244,238/3);
+      	context.lineTo(256,238/3);
       	context.lineTo(256,488);
       	context.lineTo(488,488);
       	context.lineTo(488,12);
@@ -152,9 +152,11 @@
       	context.lineTo(366,396.66666666666666666666666666666666666666666666666);
       	context.lineTo(366,12);
       	context.lineTo(134,12);
-      	context.lineTo(134,396.66666666666666666666666666666666666666666666666);
-      	context.lineTo(122,396.66666666666666666666666666666666666666666666666);
+      	context.lineTo(134,1226/3);
+      	context.lineTo(122,1226/3);
       	context.lineTo(122,12);
+
+
 
       	context.closePath();
       	    
@@ -170,7 +172,7 @@
         
         context.fillStyle="black";
         context.beginPath();
-        context.arc(posX, posY, 25, 0, Math.PI*2, false);
+        context.arc(posX, posY, 25, 0, Math.PI*2, true);
         context.closePath();
         context.fill();
         context.restore();
@@ -178,7 +180,7 @@
         }
         render();
         $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
-        $("#roll_c").click(Player_Turn_Left);
+        $("#roll_c").click(Player_Turn_Right);
         $("#roll_d").click(Player_Turn_Up);
 
         </script>
