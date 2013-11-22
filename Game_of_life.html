@@ -4,10 +4,29 @@
     <link rel="stylesheet" type="text/css" href="style.css">
         <title>Game of life!</title>
     </head>
-    <body style="background-color:orange">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <body style="background-color:#4815162432">
+    
     <div class="jumbocontainer">
     <!--The below div is not supposed to be in the head.--> 
         <div id="head_div" style="width:300px;font-family:arial;background-color:red"><h1>Game of life</h1></div>
+        
+        
+        
+        
+        
         
         <div style="background-color:yellow;font-family:arial;color:blue;width:900px;height:700px;position:relative;">
             <p style="font-family:arial;color:blue">Choose the following options:</p>
@@ -62,7 +81,10 @@
                 <input type="button" value="move down" id="roll_b">
                 <input type="button" value="move right" id="roll_c">
                 <input type="button" value="move up" id="roll_d">
-                <input type="button" value="move left" id=" roll_l">
+                <input type="button" value="move left" id="roll_e">
+                <input type="button" value="STEP" id="step_b">
+
+
 
                 
                 
@@ -82,6 +104,10 @@
             
             <canvas id="canvas" style="position:absolute;left: 50px;bottom: 50px;top: 80px;" width="500" height="500"></canvas>
         </div>
+        
+        
+        
+        
         
         <script src="j_query.js"></script>
         <script>
@@ -112,8 +138,10 @@
         var posX=67;
         var posY=155/3;
         
+        
+        
         canvas=document.getElementById("canvas");
-        context=canvas.getContext("2d")
+        context=canvas.getContext("2d");
         function Player_Turn(){
             if(posY<400)
                 {posY+=238/3}
@@ -126,15 +154,25 @@
             if(posY>67)
                 {posY-=238/3}
         }
+
         function Player_Turn_Left(){
-            if(posX>67)
+            if(posX>68)
                 {posX-=122}
-                
         }
         
         
+        function main_stepping(steps){
+            posY+=(122*steps);
+            
+        }
+
+
+        
+        
         function  render(){
+            
         context.save();
+        
         canvas.width=500;
       	canvas.height=500;
       	    
@@ -152,7 +190,9 @@
       	context.lineTo(256,488);
       	context.lineTo(488,488);
       	context.lineTo(488,12);
+      	
       	//moving path back now...
+      	
       	context.lineTo(378,12);
       	context.lineTo(378,1226/3);
       	context.lineTo(366,1226/3);
@@ -161,7 +201,9 @@
       	context.lineTo(134,1226/3);
       	context.lineTo(122,1226/3);
       	context.lineTo(122,12);
+      	
         //lines that cut board into spaces
+        
         context.moveTo(12,274/3);
         context.lineTo(488,274/3);
         
@@ -179,6 +221,7 @@
         
         context.moveTo(12,488);
         context.lineTo(488,488);
+        
         
 
       	context.closePath();
@@ -200,17 +243,23 @@
         ///context.fillRect(posX-25,posY-25,posX+25,posY+25);
         context.closePath();
         context.fill();
+        
         context.restore();
+        
         setTimeout(render,1000/60);///This is important: redefines canvas stuff multiple times
         ///END OF RENDER
         }
         render();
         
         ///jquery buttons
-        $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
-        $("#roll_c").click(Player_Turn_Right);
-        $("#roll_d").click(Player_Turn_Up);
-        $("#roll_l").click(Player_Turn_Left);
+        //$("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
+        //$("#roll_c").click(Player_Turn_Right);
+        //$("#roll_d").click(Player_Turn_Up);
+        //$("#roll_e").click(Player_Turn_Left);
+        $("#step_b").click(function()
+            {main_stepping(1)}
+        );
+        
 
         </script>
         
