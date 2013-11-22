@@ -62,6 +62,7 @@
                 <input type="button" value="move down" id="roll_b">
                 <input type="button" value="move right" id="roll_c">
                 <input type="button" value="move up" id="roll_d">
+                <input type="button" value="move left" id=" roll_l">
 
                 
                 
@@ -85,16 +86,16 @@
         <script src="j_query.js"></script>
         <script>
             $("#button_1").click(function(){
-                $("#div_2").text("You have attribute: [option_1 here]")
+                $("#div_2").text("You have attribute: [option_1 here]");
             });
             $("#button_2").click(function(){
-                $("#div_2").text("You have attribute: [option_2 here]")
+                $("#div_2").text("You have attribute: [option_2 here]");
             });
             $("#button_3").click(function(){
-                $("#div_2").text("You have attribute: [option_3 here]")
+                $("#div_2").text("You have attribute: [option_3 here]");
             });
             $("#button_4").click(function(){
-                $("#div_2").text("You have attribute: [option_4 here]")
+                $("#div_2").text("You have attribute: [option_4 here]");
             });
             
         </script>
@@ -122,8 +123,13 @@
                 {posX+=122}
         }
         function Player_Turn_Up(){
-            if(posY>66)
+            if(posY>67)
                 {posY-=238/3}
+        }
+        function Player_Turn_Left(){
+            if(posX>67)
+                {posX-=122}
+                
         }
         
         
@@ -190,15 +196,21 @@
         context.fillStyle="black";
         context.beginPath();
         context.arc(posX, posY, 25, 0, Math.PI*2, true);
+        ///if we want a rect to be the player...
+        ///context.fillRect(posX-25,posY-25,posX+25,posY+25);
         context.closePath();
         context.fill();
         context.restore();
         setTimeout(render,1000/60);///This is important: redefines canvas stuff multiple times
+        ///END OF RENDER
         }
         render();
+        
+        ///jquery buttons
         $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
         $("#roll_c").click(Player_Turn_Right);
         $("#roll_d").click(Player_Turn_Up);
+        $("#roll_l").click(Player_Turn_Left);
 
         </script>
         
