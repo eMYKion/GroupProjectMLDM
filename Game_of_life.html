@@ -61,7 +61,8 @@
                 
                 <input type="button" value="move down" id="roll_b">
                 <input type="button" value="move right" id="roll_c">
-                <input type="button" value="move up" id="roll_d">
+                <input type="button" value="move up" id="roll_d"><br/>
+                <input type="button" value="move left" id="roll_e">
 
                 
                 
@@ -124,6 +125,10 @@
         function Player_Turn_Up(){
             if(posY>66)
                 {posY-=238/3}
+        }
+        function Player_Turn_left(){
+            if(posX>68)
+                {posX-=122}
         }
         
         
@@ -199,7 +204,7 @@
         $("#roll_b").click(Player_Turn);///Player_Turn is treated as variable
         $("#roll_c").click(Player_Turn_Right);
         $("#roll_d").click(Player_Turn_Up);
-
+        $("#roll_e").click(Player_Turn_left);
         </script>
         
         
